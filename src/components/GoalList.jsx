@@ -25,10 +25,12 @@ class GoalList extends Component  {
                 //let goalObject = goal.val();
                 const { email, title} = goal.val();
                // console.log('goalObject', goalObject);
-               goals.push({email, title});
+               const serverKey = goal.key;
+               goals.push({email, title, serverKey});
+              // console.log('goal', goal);
             })
 
-            //console.log('goals', goals);
+            console.log('goals', goals);
                 this.props.setGoals(goals);
         })
     }
@@ -38,7 +40,7 @@ class GoalList extends Component  {
 
 
     render(){
-        console.log('this.props.goals', this.props.goals);
+       // console.log('this.props.goals', this.props.goals);
         return(
             <div> 
                 {
